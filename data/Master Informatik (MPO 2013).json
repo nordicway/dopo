@@ -1,0 +1,71 @@
+{
+	"name":	"Master Informatik (MPO 2013)",
+	"cpTotal":	"120",
+	"color": "#00ff00",
+	"modules": [
+		{
+			"number":	"4701",
+			"name": "Formale Strukturen",
+			"cp":	15,
+			"type":	1,
+			"examSpots": 3,
+			"availableExams": [ "46865", "46866", "46801", "46867", "46839", "46800"]
+		},
+		{
+			"number":	"undefined",
+			"name": "Informatik",
+			"cp":	15,
+			"type":	1,
+			"examSpots": 3,
+			"availableExams": [ "46859", "46848", "46857", "46910", "46833"]
+		},
+		{
+			"number":	"undefined",
+			"name": "Managementqualifikation",
+			"cp":	10,
+			"type":	1,
+			"examSpots": 2,
+			"availableExams": [ "46911", "46858", "47723", "46877"]
+		},
+		{
+			"number":	"undefined",
+			"name": "Vertiefungsrichtung",
+			"cp":	20,
+			"type":	1,
+			"examSpots": 4,
+			"availableExams": [ "46861", "46908", "46854", "46862", "46852", "46895", "46816", "46829", "46850", "46860", "46863"]
+		},
+		{
+			"number":	"undefined",
+			"name": "Wahlpflichtthemenbereich",
+			"cp":	10,
+			"type":	1,
+			"examSpots": 2,
+			"availableExams": [ "46874", "46865", "46866", "46801", "46867", "46839", "46800", "46859", "46848", "46857", "46910", "46833", "46911", "46858", "47723", "46877", "46861", "46908", "46854", "46862", "46852", "46895", "46816", "46829", "46850", "46860", "46863"]
+		},
+		{
+			"number":	"undefined",
+			"name": "Masterseminar",
+			"cp":	5,
+			"type":	1,
+			"examSpots": 1,
+			"availableExams": [ "47591"]
+		},
+		{
+			"number":	"undefined",
+			"name": "F&E Projekt",
+			"cp":	15,
+			"type":	1,
+			"examSpots": 1,
+			"availableExams": [ "47581"]
+		},
+		{
+			"number":	"undefined",
+			"name": "Masterarbeit einschl. Kolloquium",
+			"cp":	30,
+			"type":	1,
+			"examSpots": 1,
+			"availableExams": [ "103"]
+		}
+	]
+}

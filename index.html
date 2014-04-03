@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en" data-framework="backbonejs">
+	<head>
+		<meta charset="utf-8">
+		<title>FHDO Informatik Notenberechnung</title>
+		<link rel="stylesheet" href="bower_components/grades-common/base.css">
+		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
+		<script type="text/template" id="module-template">
+			<div class="view">
+				<table class="module-table" style="background-color: <%- color %>; font-weight: bold">
+				<tr>
+					<td><label><%- name %></label></td>
+					<td class="module-field-small"><label><%- grade %></label></td>
+					<td class="module-field-small"><label><%- cp %></label></td>
+					<td class="module-field-small"><!-- TODO "add exam" button if required --></td>
+				</tr>
+				</table>
+				<div class="exams"></div>
+			</div>
+			<div class="edit">
+				<input type="text" value="<%- name %>"/>
+				<input type="text" value="<%- cp %>" />
+				<button class="save-button">Speichern</button>
+			</div>
+		</script>
+		<script type="text/template" id="exam-template">
+			<div class="view">
+				<table class="module-table">
+					<tr>
+						<td><label><%- name %></label></td>
+						<td class="module-field-small"><label><%- grade %></label></td>
+						<td class="module-field-small"><label><%- ects %></label></td>
+						<td class="module-field-small"><button class="edit-button">Bearbeiten</button></td>
+					</tr>
+				</table>
+			</div>
+			<div class="edit">
+				<table class="module-table">
+					<tr>
+						<td><input type="text" class="full-width" name="name" value="<%- name %>"/></td>
+						<td class="module-field-small"><input type="text" size="3" name="grade" value="<%- grade %>"/></td>
+						<td class="module-field-small"><input type="text" size="3" name="ects" value="<%- ects %>"/></td>
+						<td class="module-field-small"><button class="save-button">Speichern</button></td>
+					</tr>
+				</table>
+			</div>
+		</script>
+		<script type="text/template" id="ods-template">
+			<%- text %>
+		</script>
+		<script type="text/template" id="po-template">
+			<select class="view">
+				<% _.each(pos, function(po){ %>
+            		<option name="test" value="test"></select>
+       			<% }); %>
+			</select>
+		</script>
+		<script type="text/template" id="po-select">
+    	<select id="po-select">
+        <% rules.each(function(rule) { %>
+            <option value="<%= rule.get('name') %>"><%= rule.get('name') %></option>
+        <% }); %>
+    		</select>
+		</script>
+		<script type="text/template" id="stats-template">
+			<div class="progressContainer">
+				<progress value="<%- achievedCP %>" max="<%- cpTotal %>" class="progress"></progress>
+				<span class="progresslabel"><%- achievedCP %> von <%- cpTotal %> CP</span>
+			</div>
+			<div class="gradeStatsBox">
+				<span>&Oslash; Prüfungen: <%- meanExamGrade %></span> &bull;
+				<span>&Oslash; Module: <%- meanModuleGrade %></span> &bull;
+				<abbr title="Gewichtete Modulnote. Entspricht der Endnote, wenn alle Module bestanden sind.">gew. Modulnote</abbr>: <span><%- weightedModuleGrade %></span>
+			</div>
+		</script>
+		<script src="bower_components/grades-common/base.js"></script>
+		<script src="bower_components/jquery/jquery.js"></script>
+		<script src="bower_components/underscore/underscore.js"></script>
+		<script src="bower_components/backbone/backbone.js"></script>
+		<script src="bower_components/backbone.localStorage/backbone.localStorage.js"></script>
+		<script src="js/models/odstext.js"></script>
+		<script src="js/models/exam.js"></script>
+		<script src="js/collections/exams.js"></script>
+		<script src="js/models/po.js"></script>
+		<script src="js/models/module.js"></script>
+		<script src="js/collections/modules.js"></script>
+		<script src="js/collections/pos.js"></script>
+		<script src="js/models/gradesheet.js"></script>
+		<script src="js/views/po-view.js"></script>
+		<script src="js/views/ods-view.js"></script>
+		<script src="js/views/exam-view.js"></script>
+		<script src="js/views/module-view.js"></script>
+		<script src="js/views/app-view.js"></script>
+		<script src="js/app.js"></script>
+	</head>
+	<body>
+		<h1>Notenberechnung</h1>
+		
+		<section id="gradesapp">
+		
+		<div class="helpLine">
+			<span class="step">1</span>
+			<span class="helpText">Komplette Notentabelle (PNr., Bezeichnung, ...) aus ODS einfügen:</span>
+			<button type="button" id="loadTestData" class="main-button small-top-right">Testdaten</button>
+		</div>
+		
+		<textarea id="ods-incoming" style="width: 100%" rows="10" placeholder="Notentabelle aus ODS einfügen" autofocus></textarea>
+	
+		<div class="helpLine">
+			<span class="step">2</span>
+			<span class="helpText">Prüfungsordnung auswählen:</span>
+		</div>
+		<div id="po-selector"></div>
+		<div id="calculate" class="main-button"><span class="step">3</span><span class="helpText">Noten laden</span></div>
+		<div id="module-list"></div>
+			<section id="main">
+				<ul id="module-list"></ul>
+			</section>
+			<footer id="footer"></footer>
+		</section>
+	
+	<a href="https://github.com/nordicway/dopo"><img style="position: absolute; top: 0; right: 0; border: 0;" src="https://camo.githubusercontent.com/652c5b9acfaddf3a9c326fa6bde407b87f7be0f4/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_orange_ff7600.png"></a>
+
+	</body>
+</html>

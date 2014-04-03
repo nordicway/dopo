@@ -1,0 +1,16 @@
+PNr.:	Bezeichnung:	P-Art:	Dat./Sem.	Prüfer:	Note:	ECTS:	Status:	Vermerk:
+46865	Formale Sprachen und Compilerbau Wahlpflichtfach	Modulprüfung	01.01.01	Nachname, Vorname	3,3  	5	BE, bestanden	  
+46801	Angewandte Statistik Wahlpflichtfach	Modulprüfung	01.01.01	Nachname, Vorname	3,3  	5	BE, bestanden	  
+46800	Mathematische Grundlagen der Verschlüsselungstechnik Wahlpflichtfach	Modulprüfung	01.01.01	Nachname, Vorname	3,7  	5	BE, bestanden	  
+46859	Formale Methoden der Softwaretechnik	Modulprüfung	01.01.01	Nachname, Vorname	2,0  	5	BE, bestanden	  
+46848	System- und Softwarequalitätssicherung Pflichtfach	Modulprüfung	01.01.01	Nachname, Vorname	1,7  	5	BE, bestanden	  
+46857	IT-Sicherheit Pflichtfach	Modulprüfung	01.01.01	Nachname, Vorname	4,0  	5	BE, bestanden	  
+46910	Requirements Engineering	Modulprüfung	01.01.01	Nachname, Vorname	  		AN, angemeldet	  
+46911	Fortgeschrittene BWL	Modulprüfung	01.01.01	Nachname, Vorname	1,7  	5	BE, bestanden	  
+46858	Projektmanagement Wahlpflichtfach	Modulprüfung	01.01.01	Nachname, Vorname	2,3  	5	BE, bestanden	  
+47723	Personalführung	Modulprüfung	01.01.01	Nachname, Vorname	3,0  	5	BE, bestanden	  
+46874	Business Intelligence	Modulprüfung	01.01.01	Nachname, Vorname	2,0  	5	BE, bestanden	  
+46895	Mobile Datenbank- und Informationssysteme	Modulprüfung	01.01.01	Nachname, Vorname	2,7  	5	BE, bestanden	  
+46852	Verteilte und mobile Systeme	Modulprüfung	01.01.01	Nachname, Vorname	2,0  	5	BE, bestanden	  
+46854	Fortgeschrittenes Web-Engineering	Modulprüfung	01.01.01	Nachname, Vorname	2,3  	5	BE, bestanden	  
+46862	Entwurfsmuster und Komponentenbasierte Systeme	Modulprüfung	01.01.01	Nachname, Vorname	1,7  	5	BE, bestanden	  
