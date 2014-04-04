@@ -136,6 +136,7 @@ var app = app || {};
 				 */
 				var idMatch = app.exams.filter(function(exam) {
 				    return (
+					  exam.get('passed') == true &&
 				      exam.get('type')  == 0 &&
 				      exam.get('number') == availableExams[i] &&
 				      exam.get('used') == false
