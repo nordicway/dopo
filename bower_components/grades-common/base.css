@@ -350,6 +350,12 @@ label[for='toggle-all'] {
 	display: none;
 }
 
+#module-list {
+	/* fixes footer overlay */
+	position: relative;
+	z-index: 2;
+}
+
 #module-list li.editing .edit {
 	display: block;
 	width: 506px;

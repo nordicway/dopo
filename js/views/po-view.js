@@ -15,8 +15,11 @@ var app = app || {};
 
 		initialize: function () {
 			this.collection = app.POs;
-			
 			this.listenTo(this.collection, 'all', this.render);
+			//set default PO
+			app.selectedPO.set("name", "Master Informatik (MPO 2005)");
+			
+			
 		},
 
 		render: function () {
