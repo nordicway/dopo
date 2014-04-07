@@ -32,16 +32,27 @@ var app = app || {};
 			return this.getGradeNumber() * this.get('ects');
 		},
 		
+		/*
+		 * Returns the grade of this exam as a Number.
+		 */
 		getGradeNumber: function() {
 			return new Number(this.get('grade').replace(",",".") );
 		},
-
-		reset: function() {
-
+		
+		/*
+		 * Returns true if user passed this exam.
+		 * Returns false otherwise.
+		 */
+		isPassed: function() {
+			var passed = false;
+			var grade = this.getGradeNumber();
+			if (!isNaN(grade) && grade < 5) {
+				passed = true;
+			}
+			return passed;
 		},
 
-		
-		change: function() {
+		reset: function() {
 
 		}
 	});

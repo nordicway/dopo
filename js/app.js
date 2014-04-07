@@ -10,6 +10,16 @@ if(!String.prototype.startsWith){
     }
 }
 
+if(!Number.prototype.cutOff) {
+	//using this because Number.toFixed() rounds
+	Number.prototype.cutOff = function (precision) {
+    var multiplier = Math.pow( 10, precision + 1 );
+    var wholeNumber = Math.floor( this * multiplier );
+    return Math.floor( wholeNumber / 10 ) * 10 / multiplier;
+	}
+}
+
+
 $(function () {
 	'use strict';
 

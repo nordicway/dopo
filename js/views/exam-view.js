@@ -22,16 +22,12 @@ var app = app || {};
 		},
 
 		render: function () {
-
 			this.$el.html(this.template(this.model.toJSON()));
-			this.$el.toggleClass('completed', this.model.get('completed'));
-			this.toggleVisible();
 			this.$input = this.$('.edit');
 			this.$inputname = this.$('.edit input[name="name"]');
 			this.$inputgrade = this.$('.edit input[name="grade"]');
 			this.$inputects = this.$('.edit input[name="ects"]');
 			this.$output = this.$('.view');
-			this.$el.toggleClass('view', this.model.get('completed'));
 			this.$input.toggleClass('hidden');
 			return this;
 		},
@@ -39,16 +35,6 @@ var app = app || {};
 		toggleVisible: function () {
 			this.$el.toggleClass('hidden', this.isHidden());
 			
-		},
-
-		isHidden: function () {
-			var isCompleted = this.model.get('completed');
-			return false;
-		},
-
-		// Toggle the `"completed"` state of the model.
-		toggleCompleted: function () {
-			this.model.toggle();
 		},
 
 		edit: function () {

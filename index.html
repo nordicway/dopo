@@ -4,6 +4,7 @@
 		<meta charset="utf-8">
 		<title>FHDO Informatik Notenberechnung</title>
 		<link rel="stylesheet" href="bower_components/grades-common/base.css">
+		<link rel="stylesheet" href="bower_components/grades-common/font-awesome/css/font-awesome.min.css">
 		<link href='http://fonts.googleapis.com/css?family=Open+Sans:400&subset=latin,latin-ext' rel='stylesheet' type='text/css'>
 		<script type="text/template" id="module-template">
 			<div class="view">
@@ -11,8 +12,8 @@
 				<tr>
 					<td><label><%- name %></label></td>
 					<td class="module-field-small"><label><%- grade %></label></td>
-					<td class="module-field-small"><label><%- cp %></label></td>
-					<td class="module-field-small"><!-- TODO "add exam" button if required --></td>
+					<td class="module-field-small"><label><%- achievedCP %> / <%- cp %></label></td>
+					<td class="module-field-small"><%= cp === achievedCP ?  '<i class="fa fa-check-square"></i>' : '' %><!-- TODO "add exam" button if required --></td>
 				</tr>
 				</table>
 				<div class="exams"></div>
@@ -70,7 +71,9 @@
 			<div class="gradeStatsBox">
 				<span>&Oslash; Prüfungen: <%- meanExamGrade %></span> &bull;
 				<span>&Oslash; Module: <%- meanModuleGrade %></span> &bull;
-				<abbr title="Gewichtete Modulnote. Entspricht der Endnote, wenn alle Module bestanden sind.">gew. Modulnote</abbr>: <span><%- weightedModuleGrade %></span>
+				<abbr title="Gewichtete Modulnote.
+Entspricht der Endnote, wenn alle Module bestanden sind.
+Entspricht der besten erreichbaren Endnote, wenn alle noch nicht bestandenen Module mit Bestnote bestanden werden.">gew. Modulnote</abbr>: <span><%- weightedModuleGrade %></span>
 			</div>
 		</script>
 		<script src="bower_components/grades-common/base.js"></script>
@@ -111,8 +114,13 @@
 			<span class="helpText">Prüfungsordnung auswählen:</span>
 		</div>
 		<div id="po-selector"></div>
-		<div id="calculate" class="main-button"><span class="step">3</span><span class="helpText">Noten laden</span></div>
+		<div id="calculate" class="main-button"><span class="step">3</span><span class="helpText">Noten anzeigen</span></div>
 		<div id="module-list"></div>
+		<div style="text-align: center; margin: auto; width: 90%;">
+			<div class="main-button inline-button" id="save-gradesheet"><i class="fa fa-floppy-o fa-3x"></i> Noten speichern</div>
+			<div class="main-button inline-button" id="clear-storage"><i class="fa fa-trash-o fa-3x"></i> Noten löschen</div>
+			
+		</div>
 		<footer id="footer"></footer>
 		</section>
 	

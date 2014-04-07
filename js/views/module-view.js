@@ -24,16 +24,10 @@ var app = app || {};
 
 		render: function () {
 			this.model.setGrade();
-			if (this.model.changed.id !== undefined) {
-				return;
-			}
 
 			this.$el.html(this.template(this.model.toJSON()));
-			this.$el.toggleClass('completed', this.model.get('completed'));
-			this.toggleVisible();
 			this.$input = this.$('.edit');
 			this.$output = this.$('.view');
-			this.$el.toggleClass('view', this.model.get('completed'));
 			this.$input.toggleClass('hidden');
 			
 			this.$examlist = this.$('.exams');
@@ -43,6 +37,9 @@ var app = app || {};
 				this.$examlist.append(view.render().el);
 			}, this);
 			
+			//pass on grade change event to update dependent views
+			app.gradeSheet.trigger('change');
+			
 			return this;
 		},
 
@@ -50,46 +47,13 @@ var app = app || {};
 			this.$el.toggleClass('hidden', this.isHidden());
 		},
 
-		isHidden: function () {
-			var isCompleted = this.model.get('completed');
-			return false;
-		},
-
-		// Toggle the `"completed"` state of the model.
-		toggleCompleted: function () {
-			this.model.toggle();
-		},
-
-		// Switch this view into `"editing"` mode, displaying the input field.
 		edit: function () {
-			//this.$el.addClass('editing');
 			this.switchMode();
 		},
 		
 		switchMode: function() {
 			this.$input.toggleClass('hidden');
 			this.$output.toggleClass('hidden');
-		},
-
-		close: function () {
-			var value = this.$input.val();
-			var trimmedValue = value.trim();
-
-			if (!this.$el.hasClass('editing')) {
-				return;
-			}
-
-			if (trimmedValue) {
-				this.model.save({ title: trimmedValue });
-
-				if (value !== trimmedValue) {
-					this.model.trigger('change');
-				}
-			} else {
-				this.clear();
-			}
-
-			this.$el.removeClass('editing');
 		}
 	});
 })(jQuery);

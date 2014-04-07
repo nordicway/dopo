@@ -18,6 +18,9 @@ var app = app || {};
 		events: {
 			'click #calculate': 'updateExams',
 			'click #loadTestData': 'loadTestData',
+			'click #load-gradesheet': 'load',
+			'click #save-gradesheet': 'save',
+			'click #clear-storage': 'clearStorage'
 		},
 
 		initialize: function () {
@@ -32,15 +35,40 @@ var app = app || {};
 			this.listenTo(app.exams, 'change', this.updateGrades);
 			
 			this.listenTo(app.POs, 'all', this.render);
-
+			this.listenTo(app.gradeSheet, 'all', this.updateGrades);
+			
 			//load PO names
 			app.POs.fetch({ reset: true });
 			
-			
+			app.exams.fetch({ reset: true });
+			app.gradeSheet.fetch({ reset: true});
+			app.gradeSheet.calculate();
+			this.addAll();
+			this.render();
+		},
+		
+		clearStorage: function() {
+			window.localStorage.clear();
+			//TODO re-initialize collections instead
+			window.location.reload();
+		},
+		
+		load: function() {
+			//load saved gradesheet
+			app.gradeSheet.fetch({reset: true});
+			app.gradeSheet.calculate();
+			this.addAll();
+			this.render();
+		},
+		
+		save: function() {
+			app.gradeSheet.save();
+			app.exams.save();
+			app.selectedPO.save();
+			this.initialize();
 		},
 		
 		loadTestData: function() {
-			console.log("app-view: load test data");
 			this.odsIncomingView.loadTestData();
 		},
 		
@@ -82,8 +110,19 @@ var app = app || {};
 			
 		},
 
-		addAll: function () {
+		clearAll: function() {
+			app.gradeSheet.destroy();
+			app.exams.reset();
+			this.clearModuleList();
+			
+		},
+		
+		clearModuleList: function() {
 			this.$modulelist.html('');
+		},
+		
+		addAll: function () {
+			this.clearModuleList();
 			
 			app.gradeSheet.get('modules').each(this.addOne, this);
 		}

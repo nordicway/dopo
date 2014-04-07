@@ -10,18 +10,27 @@ var app = app || {};
 		defaults: {
 			name: ''
 		},
+		
+		localStorage: new Backbone.LocalStorage('dopo-selectedPO'),
 
 		toggle: function () {
 			app.selectedPO = this;
 		},
-		reset: function() {
-
-		},
-
 		
-		change: function() {
-
+		isEmpty: function() {
+			if (this.get('name')) {
+				return false;
+			} else {
+				return true;
+			}
+		},
+		
+		fetchOrDefault: function(def) {
+			this.fetch({reset: true});
+			if (this.isEmpty()) {
+				this.set('name', def);
+			}
 		}
 	});
-	app.selectedPO = new app.PO();
+	app.selectedPO = new app.PO({ id: 1 });
 })();

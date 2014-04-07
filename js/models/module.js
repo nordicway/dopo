@@ -6,24 +6,35 @@ var app = app || {};
 
 	// Module model
 	app.Module = Backbone.Model.extend({
-		defaults: {
-			number: '',
-			name: '',
-			cp: 0,
-			type: 0,
-			availableExams: [],
-			achievedCP: 0,
-			examSpots: 1,
-			grade: "5,0"
+		defaults: function() {
+			//return as a new object so we create a new exam collection for
+			//each module instead of referencing a single collection for all
+			//modules
+			return {
+				number: '',
+				name: '',
+				cp: 0,
+				type: 0,
+				availableExams: [], //exam numbers only
+				exams: new app.Exams(), //collection of exam models
+				achievedCP: 0,
+				examSpots: 1,
+				grade: "5,0"
+			}
 		},
 		
 		initialize: function(options){
-            if( !this.get('exams') ){ 
-            	this.set({exams: new app.Exams()});
-            }
-            
+			//if exams come within an array, convert them to objects
+			if (options.exams instanceof Array) {
+				this.set({exams: new app.Exams()});
+				this.get('exams').reset(options.exams);
+			}
 		},
 		
+		/*
+		 * Returns true if user passed this module.
+		 * Returns false otherwise.
+		 */
 		isPassed: function() {
 			if (this.get('cp') && this.get('achievedCP') === this.get('cp')) {
 				return true;
@@ -31,8 +42,15 @@ var app = app || {};
 			return false;
 		},
 		
+		/*
+		 * Returns grade of this module as a Number.
+		 */
 		getGradeNumber: function() {
-			return new Number(this.get('grade').replace(",",".") );
+			return new Number(this.get('grade')+"".replace(",",".") );
+		},
+		
+		getCPNumber: function() {
+			return new Number(this.get('cp'));
 		},
 		
 		getWeightedGrade: function() {
@@ -40,15 +58,11 @@ var app = app || {};
 		},
 		
 		setGrade: function() {
-			if (this.get('name')=='Wahlpflichtthemenbereich') {
-				var x = true;
-			}
-			
 			var currentECTS = 0;
 			this.get('exams').each( function(exam) {
 				currentECTS += exam.getWeightedPoints();
 			});
-			var moduleGrade = (currentECTS / this.get('cp')).toFixed(1);
+			var moduleGrade = (currentECTS / this.get('cp')).cutOff(1);
 			this.set('grade', moduleGrade);
 		},
 		
@@ -56,7 +70,6 @@ var app = app || {};
 			this.get('exams').add(exam); //push
 			exam.set('used', true);
 			this.setAchievedCP();
-			//this.set('achievedCP', this.get('achievedCP') + exam.get('ects') );
 			this.setGrade();
 		},
 		
@@ -66,14 +79,6 @@ var app = app || {};
 				cp += new Number(exam.get('ects'));
 			});
 			this.set('achievedCP', cp);
-		},
-
-		reset: function() {
-
-		},
-
-		change: function() {
-
 		}
 	});
 })();

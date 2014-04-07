@@ -13,7 +13,13 @@ var app = app || {};
 		},
 		
 		localStorage: new Backbone.LocalStorage('exams'),
+		
 	
+		save: function() {
+			_.each(this.models, function(model) {
+				model.save();
+			});
+		},
 	
 		addExam: function(exam) {
 			this.add(exam);
@@ -26,5 +32,6 @@ var app = app || {};
 		}
 	});
 
-	app.exams = new app.Exams();
+	app.exams = new app.Exams({id : 1});
+	
 })();

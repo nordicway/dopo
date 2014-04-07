@@ -7,6 +7,7 @@ var app = app || {};
 	//Grade sheet model
 	app.Gradesheet = Backbone.Model.extend({
 		defaults: {
+			id: 1, //use ID for class since we only have one grade sheet
 			name: '',
 			cpTotal: 0,
 			achievedCP: 0,
@@ -21,9 +22,20 @@ var app = app || {};
 				this.set('modules', new app.Modules(options.modules));
 			}
 		},
-
-		reset: function() {
+		
+		parse: function(options) {
+			//Backbone wants to save arrays but load collections, so we convert
+			//the incoming modules array to a collection via JQuery deep cloning
+			var parsed = jQuery.extend(true, {}, options);
+			parsed.modules = new app.Modules();
+			_.each(options.modules, function(moduleContent) {
+					var module = new app.Module(moduleContent);
+					parsed.modules.add(module);
+				});
+			return parsed;
 		},
+		
+		localStorage: new Backbone.LocalStorage('dopo-gradesheet'),
 		
 		calculate: function() {
 			this.setAchievedCP();
@@ -31,21 +43,19 @@ var app = app || {};
 			this.setMeanModuleGrade();
 			this.setWeightedModuleGrade();
 		},
-
-		
-		change: function() {
-		},
 		
 		setMeanExamGrade: function() {
 			var gradeSum = 0;
 			var numExams = 0;
 			this.get('modules').each(function(module) {
 				module.get('exams').each(function(exam) {
-					gradeSum += exam.getGradeNumber();
-					numExams++;
+					if (exam.isPassed()) {
+						gradeSum += exam.getGradeNumber();
+						numExams++;
+					}
 				});
 			});
-			this.set('meanExamGrade', new Number(gradeSum / numExams).toFixed(2) );
+			this.set('meanExamGrade', new Number(gradeSum / numExams).cutOff(2) );
 		},
 		
 		setMeanModuleGrade: function() {
@@ -57,17 +67,24 @@ var app = app || {};
 					numModules++;
 				}
 			});
-			this.set('meanModuleGrade', new Number(gradeSum / numModules).toFixed(2) );
+			this.set('meanModuleGrade', new Number(gradeSum / numModules).cutOff(2) );
 		},
 		
 		setWeightedModuleGrade: function() {
 			var cpSum = 0;
+			var cpTotal = this.get('cpTotal');
 			this.get('modules').each(function(module) {
 				if (module.isPassed()) {
 					cpSum += module.getWeightedGrade();
+				} else {
+					//module not passed, adding optimal CP.
+					//TODO this WILL output unreachable grades if there are not
+					//enough unwritten exams in a module. Change it to calculate
+					//based on individual exams instead.
+					cpSum += module.getCPNumber();
 				}
 			});
-			this.set('weightedModuleGrade', new Number(cpSum / this.get('cpTotal')).toFixed(1) );
+			this.set('weightedModuleGrade', new Number(cpSum / cpTotal).cutOff(1) );
 		},
 		
 		setAchievedCP: function() {
@@ -130,9 +147,10 @@ var app = app || {};
 				
 				/*
 				 * look for exams that are 
-				 * 1) not modules
-				 * 2) fit within the top module (by exam number)
-				 * 3) do not show up on the grade sheet yet 
+				 * 1) passed
+				 * 2) not modules (type==0)
+				 * 3) fit within the top module (by exam number)
+				 * 4) do not show up on the grade sheet yet 
 				 */
 				var idMatch = app.exams.filter(function(exam) {
 				    return (

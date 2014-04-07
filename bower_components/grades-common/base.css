@@ -140,6 +140,16 @@ textarea {
     box-sizing: border-box;         /* Opera/IE 8+ */
 }
 
+.inline-button {
+	width: 30% !important;
+	display: inline-block !important;
+   	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
+    box-sizing: border-box;         /* Opera/IE 8+ */
+	padding: 1em;
+	margin: 2em
+}
+
 .small-top-right {
 	position: absolute;
 	width: 8em !important; /* override main-button */ 
@@ -578,56 +588,6 @@ hr {
 	border-bottom: 1px dashed #F7F7F7;
 }
 
-.learn a {
-	font-weight: normal;
-	text-decoration: none;
-	color: #b83f45;
-}
-
-.learn a:hover {
-	text-decoration: underline;
-	color: #787e7e;
-}
-
-.learn h3,
-.learn h4,
-.learn h5 {
-	margin: 10px 0;
-	font-weight: 500;
-	line-height: 1.2;
-	color: #000;
-}
-
-.learn h3 {
-	font-size: 24px;
-}
-
-.learn h4 {
-	font-size: 18px;
-}
-
-.learn h5 {
-	margin-bottom: 0;
-	font-size: 14px;
-}
-
-.learn ul {
-	padding: 0;
-	margin: 0 0 30px 25px;
-}
-
-.learn li {
-	line-height: 20px;
-}
-
-.learn p {
-	font-size: 15px;
-	font-weight: 300;
-	line-height: 1.3;
-	margin-top: 0;
-	margin-bottom: 0;
-}
-
 .quote {
 	border: none;
 	margin: 20px 0 60px 0;
@@ -686,32 +646,3 @@ hr {
 	border-top-color: rgba(0, 0, 0, .04);
 }
 
-.learn-bar > .learn {
-	position: absolute;
-	width: 272px;
-	top: 8px;
-	left: -300px;
-	padding: 10px;
-	border-radius: 5px;
-	background-color: rgba(255, 255, 255, .6);
-	-webkit-transition-property: left;
-	transition-property: left;
-	-webkit-transition-duration: 500ms;
-	transition-duration: 500ms;
-}
-
-@media (min-width: 899px) {
-	.learn-bar {
-		width: auto;
-		margin: 0 0 0 300px;
-	}
-
-	.learn-bar > .learn {
-		left: 8px;
-	}
-
-	.learn-bar #gradesapp {
-		width: 550px;
-		margin: 130px auto 40px auto;
-	}
-}

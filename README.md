@@ -15,10 +15,17 @@ Eine funktionsfähige Installation findet sich u.a. hier:
 
 - Automatisches Einsortieren von Prüfungen in die passenden Module
 
-- Nachträgliches Bearbeiten von Prüfungsergebnissen 
+- Nachträgliches Bearbeiten von Prüfungsergebnissen
+
+- Persistente Speicherung der Noten im Browser
 
 - Einfaches Umschalten zwischen Prüfungsordnungen, um zu vergleichen, ob sich
  ein PO Wechsel lohnt
+
+## Anforderungen
+
+- ein aktueller Browser mit HTML5 und Javascript Unterstützung, getestet mit
+ Google Chrome 33.
 
 
 ## Anleitung
@@ -76,8 +83,6 @@ Mit diesen Einstellungen sollte man aus Sicherheitsgründen keine Webseiten
 
 - Gegebenenfalls Rundungsdifferenzen berücksichtigen. Bis jetzt werden erst
  Pflichtmodule aufgefüllt und danach die Wahlmodule.
-  
-- Persistente Speicherung der Daten über HTML5 Web Storage
 
 - Main View entzerren und Code Cleanups, siehe u.a. TODO Markierungen im Code
 
