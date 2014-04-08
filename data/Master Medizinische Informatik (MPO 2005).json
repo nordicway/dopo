@@ -1,0 +1,71 @@
+{
+	"name":	"Master Medizinische Informatik (MPO 2005)",
+	"cpTotal":	"120",
+	"color": "#ff00ff",
+	"modules": [
+		{
+			"number":	"47500",
+			"name": "Formale Strukturen",
+			"cp":	10,
+			"type":	1,
+			"examSpots": 2,
+			"availableExams": [ "46801", "47503", "46865", "47501", "46866", "47502", "46867", "47504" ]
+		},
+		{
+			"number":	"47610",
+			"name": "Medizinische Informatik",
+			"cp":	24,
+			"type":	1,
+			"examSpots": 4,
+			"availableExams": [ "47611", "47612", "47613", "47614", "47615" ]
+		},
+		{
+			"number":	"47700",
+			"name": "IT-Management",
+			"cp":	13,
+			"type":	1,
+			"examSpots": 3,
+			"availableExams": [ "46857", "47514", "46877", "47523", "47703" ]
+		},
+		{
+			"number":	"47550",
+			"name": "Wahlpflichtmodul",
+			"cp":	10,
+			"type":	1,
+			"examSpots": 2,
+			"availableExams": [ "46800", "46816", "46824", "46829", "46830", "46833", "46835", "46839", "46854", "46848", "46910", "47716", "47717", "47718", "46908", "46850", "46852", "46858", "46859", "46860", "46861", "46862", "46863", "46864", "46872", "46874", "46895" ]
+		},
+		{
+			"number":	"47570",
+			"name": "Masterprojekt 1",
+			"cp":	10,
+			"type":	1,
+			"examSpots": 1,
+			"availableExams": [ "47571" ]
+		},
+		{
+			"number":	"47620",
+			"name": "Masterprojekt 2",
+			"cp":	10,
+			"type":	1,
+			"examSpots": 1,
+			"availableExams": [ "47621" ]
+		},
+		{
+			"number":	"47640",
+			"name": "Masterseminar",
+			"cp":	16,
+			"type":	1,
+			"examSpots": 4,
+			"availableExams": [ "47641", "47642", "47643", "47644" ]
+		},
+		{
+			"number":	"undefined",
+			"name": "Masterarbeit",
+			"cp":	27,
+			"type":	1,
+			"examSpots": 1,
+			"availableExams": [ "103"]
+		}
+	]
+}

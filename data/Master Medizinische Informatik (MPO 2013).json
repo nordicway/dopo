@@ -1,0 +1,71 @@
+{
+	"name":	"Master Medizinische Informatik (MPO 2013)",
+	"cpTotal":	"120",
+	"color": "#ff00ff",
+	"modules": [
+		{
+			"number":	"undefined",
+			"name": "Formale Strukturen",
+			"cp":	10,
+			"type":	1,
+			"examSpots": 2,
+			"availableExams": [ "46865", "46866", "46801", "46867" ]
+		},
+		{
+			"number":	"undefined",
+			"name": "Medizinische Informatik",
+			"cp":	30,
+			"type":	1,
+			"examSpots": 6,
+			"availableExams": [ "47612", "47614", "47613", "47716", "47717", "47718" ]
+		},
+		{
+			"number":	"undefined",
+			"name": "IT-Management",
+			"cp":	15,
+			"type":	1,
+			"examSpots": 3,
+			"availableExams": [ "46857", "46877", "46858", "47723", "46872" ]
+		},
+		{
+			"number":	"47550",
+			"name": "Wahlpflichtthemenbereich",
+			"cp":	10,
+			"type":	1,
+			"examSpots": 2,
+			"availableExams": [ "46852", "46874", "46854", "46861", "46862", "46908", "46895", "46910", "46839", "46911", "46848", "46800" ]
+		},
+		{
+			"number":	"47570",
+			"name": "Masterprojekt 1",
+			"cp":	7,
+			"type":	1,
+			"examSpots": 1,
+			"availableExams": [ "47571" ]
+		},
+		{
+			"number":	"47620",
+			"name": "Masterprojekt 2",
+			"cp":	10,
+			"type":	1,
+			"examSpots": 1,
+			"availableExams": [ "47621" ]
+		},
+		{
+			"number":	"47640",
+			"name": "Masterseminar",
+			"cp":	8,
+			"type":	1,
+			"examSpots": 2,
+			"availableExams": [ "47641", "47643" ]
+		},
+		{
+			"number":	"undefined",
+			"name": "Masterarbeit und Kolloquium",
+			"cp":	30,
+			"type":	1,
+			"examSpots": 1,
+			"availableExams": [ "103"]
+		}
+	]
+}
