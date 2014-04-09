@@ -1,0 +1,160 @@
+{
+	"name":	"Bachelor Informatik - Praktische Informatik (BPO 2010)",
+	"cpTotal":	"180",
+	"cpGraded": "165",
+	"color": "#99ccff",
+	"modules": [
+		{
+			"number":	"42010",
+			"name": "Einführung in die Informatik",
+			"cp":	10,
+			"type":	1,
+			"examSpots": 2,
+			"availableExams": [ "41011", "42012"]
+		},
+		{
+			"number":	"43020",
+			"name": "Programmierkurs",
+			"cp":	10,
+			"type":	1,
+			"examSpots": 2,
+			"availableExams": [ "42021", "43022" ]
+		},
+		{
+			"number":	"42030",
+			"name": "Rechnerstrukturen und Betriebssysteme",
+			"cp":	10,
+			"type":	1,
+			"examSpots": 2,
+			"availableExams": [ "41031", "42032" ]
+		},
+		{
+			"number":	"42040",
+			"name": "Theoretische Informatik",
+			"cp":	5,
+			"type":	1,
+			"examSpots": 1,
+			"availableExams": [ "42041" ]
+		},
+		{
+			"number":	"43050",
+			"name": "Systemgrundlagen",
+			"cp":	10,
+			"type":	1,
+			"examSpots": 2,
+			"availableExams": [ "43051", "43052" ]
+		},
+		{
+			"number":	"41060",
+			"name": "Mathematik 1",
+			"cp":	10,
+			"type":	1,
+			"examSpots": 2,
+			"availableExams": [ "41061", "41062" ]
+		},
+		{
+			"number":	"42070",
+			"name": "Mathematik 2",
+			"cp":	10,
+			"type":	1,
+			"examSpots": 2,
+			"availableExams": [ "42071", "42072", "42073" ]
+		},
+		{
+			"number":	"43080",
+			"name": "Medieninformatik",
+			"cp":	10,
+			"type":	1,
+			"examSpots": 2,
+			"availableExams": [ "43081", "43082" ]
+		},
+		{
+			"number":	"43090",
+			"name": "Künstliche Intelligenz",
+			"cp":	5,
+			"type":	1,
+			"examSpots": 1,
+			"availableExams": [ "46834", "43091"  ]
+		},
+		{
+			"number":	"42100",
+			"name": "Außerfachliches Grundlagenmodul",
+			"cp":	10,
+			"type":	1,
+			"examSpots": 3,
+			"availableExams": [ "41101", "41102", "411031", "411032" ]
+		},
+		{
+			"number":	"44110",
+			"name": "Netzbasierte Systeme und Anwendungen",
+			"cp":	10,
+			"type":	1,
+			"examSpots": 2,
+			"availableExams": [ "46832", "46813", "44112" ]
+		},
+		{
+			"number":	"44120",
+			"name": "Softwaresysteme 1",
+			"cp":	10,
+			"type":	1,
+			"examSpots": 2,
+			"availableExams": [ "44121", "46898" ]
+		},
+		{
+			"number":	"44130",
+			"name": "Softwaresysteme 2",
+			"cp":	10,
+			"type":	1,
+			"examSpots": 2,
+			"availableExams": [ "46812", "44131", "46990", "44132", "44141" ]
+		},
+		{
+			"number":	"46170",
+			"name": "Wahlpflichtmodul Praktische Informatik",
+			"cp":	10,
+			"type":	1,
+			"examSpots": 2,
+			"availableExams": [ "46808", "46809", "46828", "46849", "46856", "46890", "46892", "46900" ]
+		},
+		{
+			"number":	"46150",
+			"name": "Wahlpflichtmodul Informatik",
+			"cp":	10,
+			"type":	1,
+			"examSpots": 2,
+			"availableExams": [ "46811", "46814", "46825", "46838", "46840", "46841", "46845", "46846", "46855", "46912", "46873", "46878", "46889", "46897", "45261", "46264", "46905", "46909", "42071", "42072", "42073", "46901", "46808", "46809", "46828", "46849", "46856", "46890", "46892", "46900" ]
+		},
+		{
+			"number":	"45180",
+			"name": "Seminar",
+			"cp":	5,
+			"type":	1,
+			"examSpots": 2,
+			"availableExams": [ "45181", "45183" ]
+		},
+		{
+			"number":	"46200",
+			"name": "Außerfachliches Modul",
+			"cp":	5,
+			"type":	1,
+			"examSpots": 2,
+			"availableExams": [ "45201", "45202", "46202" ]
+		},
+		{
+			"number":	"461901",
+			"name": "Projektarbeit",
+			"cp":	18,
+			"type":	1,
+			"examSpots": 1,
+			"availableExams": [ "46193" ]
+		},
+		{
+			"number":	"103",
+			"name": "Bachelorarbeit",
+			"cp":	12,
+			"type":	1,
+			"examSpots": 1,
+			"availableExams": [ "103"]
+		}
+	]
+}

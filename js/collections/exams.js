@@ -29,6 +29,17 @@ var app = app || {};
 			//disable event listeners with silent option to speed up process
 			//TODO verify that it actually works since this is pretty slow
 			this.invoke('set', { "used": false }, { "silent": true } );			
+		},
+		
+		/*
+		 * deletes unwritten "filler" exams
+		 */
+		deleteFillers: function() {
+			var fillers = this.where({name: FILLER_NAME});
+			for (var i=0; i < fillers.length; i++)
+			{
+				fillers[i].destroy();
+			}
 		}
 	});
 

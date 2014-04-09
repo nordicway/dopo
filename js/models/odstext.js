@@ -45,8 +45,8 @@ var app = app || {};
 				//tmpExam.set('type', this.convertVal(fields[2]) );
 				tmpExam.set('date', this.convertVal(fields[3]) );
 				tmpExam.set('examiner', this.convertVal(fields[4]) );
-				tmpExam.set('grade', this.convertVal(fields[5]) );
-				tmpExam.set('ects', new Number(this.convertVal(fields[6]) ) );
+				tmpExam.set('grade', this.convertGrade(fields[5]) );
+				tmpExam.set('ects', this.convertECTS(fields[6]) );
 				tmpExam.set('status', this.convertVal(fields[7]) );
 				tmpExam.set('remark', this.convertVal(fields[8]) );
 				
@@ -57,6 +57,8 @@ var app = app || {};
 				
 				if (tmpExam.isValid()) {
 					app.exams.addExam(tmpExam);
+				} else {
+					console.log("exam invalid:", tmpExam)
 				}
 				
 			}
@@ -64,6 +66,18 @@ var app = app || {};
 		
 		convertVal: function(val) {
 			return (val === undefined ? "" : val.trim()); 
+		},
+		
+		convertGrade: function(grade) {
+			//some Bachelor exams do not have a grade, thus treat them as 1,0
+			//since they "just count as credit points"
+			var grade = this.convertVal(grade);
+			return (grade === "" ? "1,0" : grade);
+		},
+		
+		convertECTS: function(points) {
+			//converts "2,5" credit points to a proper Number
+			return new Number(this.convertVal(points.replace(",",".")) );
 		},
 		
 		change: function() {

@@ -1,9 +1,9 @@
 [
-	{ 
-		"name": "Master Informatik (MPO 2013)"
-	},
 	{
 		"name": "Master Informatik (MPO 2005)"
+	},
+	{ 
+		"name": "Master Informatik (MPO 2013)"
 	},
 	{
 		"name": "Master Medizinische Informatik (MPO 2005)"
@@ -19,5 +19,8 @@
 	},
 	{
 		"name": "Master Wirtschaftsinformatik - 4 Semester (MPO 2012)"
+	},
+	{
+		"name": "Bachelor Informatik - Praktische Informatik (BPO 2010)"
 	}
 ]

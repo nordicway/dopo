@@ -87,6 +87,8 @@ var app = app || {};
 			$.getJSON("data/"+app.selectedPO.get("name")+".json").done(function( data ) {
 			}).always( function(data, textStatus) {
 				app.gradeSheet = new app.Gradesheet(data);
+				//delete filler exams since they are regenerated dynamically
+				app.exams.deleteFillers();
 				app.exams.markUnused();
 				app.gradeSheet.setExams(app.exams);
 				app.gradeSheet.calculate();

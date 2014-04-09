@@ -31,7 +31,7 @@
 						<td><label><%- name %></label></td>
 						<td class="module-field-small"><label><%- grade %></label></td>
 						<td class="module-field-small"><label><%- ects %></label></td>
-						<td class="module-field-small"><button class="edit-button">Bearbeiten</button></td>
+						<td class="module-field-small"><button class="edit-button main-button"><i class="fa fa-pencil-square-o"></i></button></td>
 					</tr>
 				</table>
 			</div>
@@ -41,7 +41,7 @@
 						<td><input type="text" class="full-width" name="name" value="<%- name %>"/></td>
 						<td class="module-field-small"><input type="text" size="3" name="grade" value="<%- grade %>"/></td>
 						<td class="module-field-small"><input type="text" size="3" name="ects" value="<%- ects %>"/></td>
-						<td class="module-field-small"><button class="save-button">Speichern</button></td>
+						<td class="module-field-small"><button class="save-button main-button"><i class="fa fa-check-square-o"></i></button></td>
 					</tr>
 				</table>
 			</div>
@@ -99,11 +99,16 @@ Entspricht der besten erreichbaren Endnote, wenn alle noch nicht bestandenen Mod
 	<body>
 		<h1>Notenberechnung</h1>
 		
+		<div id="info">
+			<i class="fa fa-info-circle fa-3x"></i>
+			<p>Die Berechnung und Speicherung von Noten ist komplett lokal, d.h. es werden <strong>keine</strong> Noten an einen Server geschickt.</p>
+		</div>
+		
 		<section id="gradesapp">
 		
 		<div class="helpLine">
 			<span class="step">1</span>
-			<span class="helpText">Komplette Notentabelle (PNr., Bezeichnung, ...) aus ODS einfügen:</span>
+			<span class="helpText">Gesamte Notentabelle (PNr., Bezeichnung, ...) aus ODS einfügen:</span>
 			<button type="button" id="loadTestData" class="main-button small-top-right">Testdaten</button>
 		</div>
 		

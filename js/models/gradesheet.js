@@ -10,6 +10,7 @@ var app = app || {};
 			id: 1, //use ID for class since we only have one grade sheet
 			name: '',
 			cpTotal: 0,
+			cpGraded: undefined,
 			achievedCP: 0,
 			modules: new app.Modules(),
 			meanExamGrade: 0.0,
@@ -36,6 +37,14 @@ var app = app || {};
 		},
 		
 		localStorage: new Backbone.LocalStorage('dopo-gradesheet'),
+		
+		/*
+		 * Returns the number of graded credit points if it is explicitly set.
+		 * Returns the number of total credit points otherwise.
+		 */
+		getGradedCPs: function() {
+			return this.get('cpGraded') ? this.get('cpGraded') : this.get('cpTotal');
+		},
 		
 		calculate: function() {
 			this.setAchievedCP();
@@ -72,7 +81,7 @@ var app = app || {};
 		
 		setWeightedModuleGrade: function() {
 			var cpSum = 0;
-			var cpTotal = this.get('cpTotal');
+			var gradedTotal = this.getGradedCPs();
 			this.get('modules').each(function(module) {
 				if (module.isPassed()) {
 					cpSum += module.getWeightedGrade();
@@ -84,7 +93,7 @@ var app = app || {};
 					cpSum += module.getCPNumber();
 				}
 			});
-			this.set('weightedModuleGrade', new Number(cpSum / cpTotal).cutOff(1) );
+			this.set('weightedModuleGrade', new Number(cpSum / gradedTotal).cutOff(1) );
 		},
 		
 		setAchievedCP: function() {

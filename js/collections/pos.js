@@ -9,9 +9,10 @@ var app = app || {};
 		model: app.PO,
 		url: 'data/pos.json',
 		
-		comparator: function (po) {
-			return po.get('name');
-		}
+		//sorting manually for now, enable if sorting by name is required
+//		comparator: function (po) {
+//			return po.get('name');
+//		}
 	});
 
 	app.POs = new POs();

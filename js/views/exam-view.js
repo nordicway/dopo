@@ -11,7 +11,9 @@ var app = app || {};
 
 		events: {
 			'click .edit-button': 'edit',
-			'click .save-button': 'close'
+			'dblclick label': 'edit',
+			'click .save-button': 'close',
+			'keypress .edit': 'updateOnEnter'
 		},
 
 		initialize: function () {
@@ -44,6 +46,12 @@ var app = app || {};
 		switchMode: function() {
 			this.$input.toggleClass('hidden');
 			this.$output.toggleClass('hidden');
+		},
+		
+		updateOnEnter: function (e) {
+			if (e.which === ENTER_KEY) {
+			this.close();
+			}
 		},
 
 		close: function () {

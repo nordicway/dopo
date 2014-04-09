@@ -244,7 +244,7 @@ input[type="checkbox"] {
 #gradesapp {
 	background: #fff;
 	background: rgba(255, 255, 255, 0.9);
-	margin: 130px 0 40px 0;
+	margin: 1em 0 40px 0;
 	border: 1px solid #ccc;
 	position: relative;
 	border-top-left-radius: 2px;
@@ -538,7 +538,7 @@ label[for='toggle-all'] {
 }
 
 #info {
-	margin: 65px auto 0;
+	margin: 0 auto 0;
 	color: #a6a6a6;
 	font-size: 12px;
 	text-shadow: 0 1px 0 rgba(255, 255, 255, 0.7);
