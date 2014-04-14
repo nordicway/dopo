@@ -1,0 +1,168 @@
+{
+	"name":	"Bachelor Wirtschaftsinformatik - 7 Semester inkl. Praxissemester (BPO 2012)",
+	"cpTotal":	"210",
+	"cpGraded": "175",
+	"color": "#FF6600",
+	"modules": [
+		{
+			"number":	"",
+			"name": "Einführung in die Informatik",
+			"cp":	12.5,
+			"type":	1,
+			"examSpots": 3,
+			"availableExams": [ "41011", "43053", "41012" ]
+		},
+		{
+			"number":	"",
+			"name": "Einführung in die Wirtschaftsinformatik",
+			"cp":	10,
+			"type":	1,
+			"examSpots": 2,
+			"availableExams": [ "41311", "42312" ]
+		},
+		{
+			"number":	"",
+			"name": "Softwareentwicklung",
+			"cp":	15,
+			"type":	1,
+			"examSpots": 3,
+			"availableExams": [ "43051", "43052", "42021" ]
+		},
+		{
+			"number":	"",
+			"name": "Mathematik 1",
+			"cp":	10,
+			"type":	1,
+			"examSpots": 2,
+			"availableExams": [ "41063", "42064" ]
+		},
+		{
+			"number":	"",
+			"name": "Mathematik 2",
+			"cp":	5,
+			"type":	1,
+			"examSpots": 1,
+			"availableExams": [ "42073" ]
+		},
+		{
+			"number":	"",
+			"name": "BWL-Grundlagen",
+			"cp":	10,
+			"type":	1,
+			"examSpots": 2,
+			"availableExams": [ "41321", "41322" ]
+		},
+		{
+			"number":	"",
+			"name": "Rechnungswesen",
+			"cp":	10,
+			"type":	1,
+			"examSpots": 2,
+			"availableExams": [ "42331", "43332" ]
+		},
+		{
+			"number":	"",
+			"name": "Außerfachliche Grundlagen",
+			"cp":	5,
+			"type":	1,
+			"examSpots": 2,
+			"availableExams": [ "41102", "41103" ]
+		},
+		{
+			"number":	"",
+			"name": "Volkswirtschaftslehre",
+			"cp":	5,
+			"type":	1,
+			"examSpots": 1,
+			"availableExams": [ "43343" ]
+		},
+		{
+			"number":	"",
+			"name": "Softwaresysteme",
+			"cp":	10,
+			"type":	1,
+			"examSpots": 2,
+			"availableExams": [ "44121", "44122" ]
+		},
+		{
+			"number":	"",
+			"name": "Betriebliche Anwendungssysteme",
+			"cp":	10,
+			"type":	1,
+			"examSpots": 2,
+			"availableExams": [ "44391", "45392" ]
+		},
+		{
+			"number":	"",
+			"name": "Angewandte BWL",
+			"cp":	5,
+			"type":	1,
+			"examSpots": 1,
+			"availableExams": [ "46893", "46836" ]
+		},
+		{
+			"number":	"",
+			"name": "Management von Informationssystemen",
+			"cp":	7.5,
+			"type":	1,
+			"examSpots": 2,
+			"availableExams": [ "46894", "44492" ]
+		},
+		{
+			"number":	"",
+			"name": "Projekt- und Informationsmanagement",
+			"cp":	10,
+			"type":	1,
+			"examSpots": 2,
+			"availableExams": [ "46858", "46909" ]
+		},
+		{
+			"number":	"",
+			"name": "DV-Recht",
+			"cp":	5,
+			"type":	1,
+			"examSpots": 1,
+			"availableExams": [ "44381" ]
+		},
+		{
+			"number":	"",
+			"name": "Seminar",
+			"cp":	5,
+			"type":	1,
+			"examSpots": 2,
+			"availableExams": [ "45181", "46182" ]
+		},
+		{
+			"number":	"",
+			"name": "Projektarbeit",
+			"cp":	15,
+			"type":	1,
+			"examSpots": 1,
+			"availableExams": [ "46199" ]
+		},
+		{
+			"number":	"6360",
+			"name": "Wahlpflichtmodul WI",
+			"cp":	15,
+			"type":	1,
+			"examSpots": 3,
+			"availableExams": [ "46893", "46805", "46808", "46811", "46812", "46813", "46869", "46906", "46831", "46905", "46912", "46836", "46832", "46837", "46891", "46841", "46842", "46856" ]
+		},
+		{
+			"number":	"",
+			"name": "Praxissemester im 6. Semester",
+			"cp":	30,
+			"type":	1,
+			"examSpots": 1,
+			"availableExams": [ "00107" ]
+		},
+		{
+			"number":	"103",
+			"name": "Bachelorarbeit (inkl. Kolloquium, 3 LP)",
+			"cp":	15,
+			"type":	1,
+			"examSpots": 1,
+			"availableExams": [ "103"]
+		}
+	]
+}
