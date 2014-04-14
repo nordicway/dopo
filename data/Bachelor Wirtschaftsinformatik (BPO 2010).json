@@ -1,0 +1,168 @@
+{
+	"name":	"Bachelor Wirtschaftsinformatik (BPO 2010)",
+	"cpTotal":	"180",
+	"cpGraded": "172.5",
+	"color": "#FF6600",
+	"modules": [
+		{
+			"number":	"42010",
+			"name": "Einführung in die Informatik",
+			"cp":	10,
+			"type":	1,
+			"examSpots": 2,
+			"availableExams": [ "41011", "42012"]
+		},
+		{
+			"number":	"42300",
+			"name": "Praktische Informatik",
+			"cp":	5,
+			"type":	1,
+			"examSpots": 1,
+			"availableExams": [ "42021", "42301" ]
+		},
+		{
+			"number":	"43310",
+			"name": "Einführung in die Wirtschaftsinformatik",
+			"cp":	10,
+			"type":	1,
+			"examSpots": 2,
+			"availableExams": [ "41311", "42312" ]
+		},
+		{
+			"number":	"42040",
+			"name": "Theoretische Informatik 1",
+			"cp":	5,
+			"type":	1,
+			"examSpots": 1,
+			"availableExams": [ "42041" ]
+		},
+		{
+			"number":	"43050",
+			"name": "Systemgrundlagen",
+			"cp":	12.5,
+			"type":	1,
+			"examSpots": 3,
+			"availableExams": [ "43051", "43052", "43053" ]
+		},
+		{
+			"number":	"42060",
+			"name": "Mathematik 1",
+			"cp":	10,
+			"type":	1,
+			"examSpots": 2,
+			"availableExams": [ "41063", "42064" ]
+		},
+		{
+			"number":	"43070",
+			"name": "Mathematik 2",
+			"cp":	5,
+			"type":	1,
+			"examSpots": 1,
+			"availableExams": [ "42073" ]
+		},
+		{
+			"number":	"41320",
+			"name": "BWL-Grundlagen",
+			"cp":	10,
+			"type":	1,
+			"examSpots": 2,
+			"availableExams": [ "41321", "41322" ]
+		},
+		{
+			"number":	"43330",
+			"name": "Rechnungswesen",
+			"cp":	10,
+			"type":	1,
+			"examSpots": 2,
+			"availableExams": [ "42331", "43332"  ]
+		},
+		{
+			"number":	"42100",
+			"name": "Außerfachliches Grundlagenmodul",
+			"cp":	7.5,
+			"type":	1,
+			"examSpots": 3,
+			"availableExams": [ "41102", "41103", "42104" ]
+		},
+		{
+			"number":	"43340",
+			"name": "Volkswirtschaftslehre",
+			"cp":	5,
+			"type":	1,
+			"examSpots": 1,
+			"availableExams": [ "43343" ]
+		},
+		{
+			"number":	"44120",
+			"name": "Softwaresysteme 1",
+			"cp":	10,
+			"type":	1,
+			"examSpots": 2,
+			"availableExams": [ "44121", "44122" ]
+		},
+		{
+			"number":	"45390",
+			"name": "Betriebliche Anwendungssysteme",
+			"cp":	10,
+			"type":	1,
+			"examSpots": 2,
+			"availableExams": [ "44391", "44392" ]
+		},
+		{
+			"number":	"45350",
+			"name": "Management von Unternehmen",
+			"cp":	10,
+			"type":	1,
+			"examSpots": 2,
+			"availableExams": [ "46893", "44351", "46894", "45352", "46836", "45353" ]
+		},
+		{
+			"number":	"44490",
+			"name": "Informationsmanagement",
+			"cp":	5,
+			"type":	1,
+			"examSpots": 1,
+			"availableExams": [ "44491" ]
+		},
+		{
+			"number":	"44380",
+			"name": "DV-Recht",
+			"cp":	5,
+			"type":	1,
+			"examSpots": 1,
+			"availableExams": [ "44381" ]
+		},
+		{
+			"number":	"46180",
+			"name": "Seminar",
+			"cp":	5,
+			"type":	1,
+			"examSpots": 2,
+			"availableExams": [ "45181", "461821" ]
+		},
+		{
+			"number":	"61903",
+			"name": "Projektarbeit",
+			"cp":	15,
+			"type":	1,
+			"examSpots": 1,
+			"availableExams": [ "46199" ]
+		},
+		{
+			"number":	"6360",
+			"name": "Wahlpflichtmodul WI",
+			"cp":	15,
+			"type":	1,
+			"examSpots": 3,
+			"availableExams": [ "46802", "46808", "46811", "46812", "46813", "46820", "46831", "46832", "46834", "46838", "46841", "46842", "46843", "46844", "46849", "46912", "46856", "46868", "46869", "WIPB-46837", "46837", "46870", "46889", "46891", "46893", "46894", "46836", "46905", "46906" ]
+		},
+		{
+			"number":	"103",
+			"name": "Bachelorarbeit (inkl. Kolloquium, 3 LP)",
+			"cp":	15,
+			"type":	1,
+			"examSpots": 1,
+			"availableExams": [ "103"]
+		}
+	]
+}
