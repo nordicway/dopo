@@ -65,6 +65,7 @@
 			"name": "Außerfachliche Grundlagen",
 			"cp":	5,
 			"type":	1,
+			"graded": false,
 			"examSpots": 2,
 			"availableExams": [ "41102", "41103" ]
 		},

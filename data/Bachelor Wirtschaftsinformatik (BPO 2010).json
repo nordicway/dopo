@@ -81,6 +81,7 @@
 			"name": "Außerfachliches Grundlagenmodul",
 			"cp":	7.5,
 			"type":	1,
+			"graded": false,
 			"examSpots": 3,
 			"availableExams": [ "41102", "41103", "42104" ]
 		},

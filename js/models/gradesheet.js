@@ -83,10 +83,10 @@ var app = app || {};
 			var cpSum = 0;
 			var gradedTotal = this.getGradedCPs();
 			this.get('modules').each(function(module) {
-				if (module.isPassed()) {
+				if (module.isPassed() && module.isGraded()) {
 					cpSum += module.getWeightedGrade();
-				} else {
-					//module not passed, adding optimal CP.
+				} else if (module.isGraded()){
+					//module not passed but graded, adding optimal CP.
 					//TODO this WILL output unreachable grades if there are not
 					//enough unwritten exams in a module. Change it to calculate
 					//based on individual exams instead.

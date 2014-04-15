@@ -19,6 +19,7 @@ var app = app || {};
 				exams: new app.Exams(), //collection of exam models
 				achievedCP: 0,
 				examSpots: 1,
+				graded: true,
 				grade: "5,0"
 			}
 		},
@@ -40,6 +41,14 @@ var app = app || {};
 				return true;
 			}
 			return false;
+		},
+		
+		/*
+		 * Returns true if module is graded.
+		 * Returns false otherwise.
+		 */
+		isGraded: function() {
+			return this.get('graded');
 		},
 		
 		/*
