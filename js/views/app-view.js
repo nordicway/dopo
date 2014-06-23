@@ -1,6 +1,6 @@
 /*global Backbone, jQuery, _, ENTER_KEY */
 var app = app || {};
-
+var gs;
 (function ($) {
 	'use strict';
 
@@ -20,6 +20,9 @@ var app = app || {};
 			'click #loadTestData': 'loadTestData',
 			'click #load-gradesheet': 'load',
 			'click #save-gradesheet': 'save',
+			'click #export-gradesheet': 'export',
+			'click #import-gradesheet': 'forwardImportClick',
+			'change #import-gradesheet-file-input': 'import',
 			'click #clear-storage': 'clearStorage'
 		},
 
@@ -59,6 +62,38 @@ var app = app || {};
 			app.gradeSheet.calculate();
 			this.addAll();
 			this.render();
+		},
+		
+		export: function() {
+			this.save();
+			console.save(localStorage, 'dopo_export.txt');
+		},
+		
+		forwardImportClick: function() {
+			$("#import-gradesheet-file-input").click();
+		},
+		
+		import: function(e) {
+			var file = e.target.files[0];
+			var fileType = /text.*/;
+
+			if (file.type.match(fileType)) {
+				var reader = new FileReader();
+
+				reader.onload = function(e) {
+					//clear old localStorage and rewrite it from uploaded file
+					localStorage.clear();
+					var fileStorage = JSON.parse(reader.result);
+					gs = fileStorage;
+					for (var key in fileStorage){
+						localStorage.setItem(key, fileStorage[key]);
+					}
+					window.location.reload();
+				}
+				reader.readAsText(file);	
+			} else {
+				fileDisplayArea.innerHTML = "Dateityp nicht unterstützt!"
+			}
 		},
 		
 		save: function() {
